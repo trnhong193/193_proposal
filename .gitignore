@@ -4,3 +4,5 @@
 *.png
 *.pdf
 test/ref/
+__pycache__/
+*.pyc
