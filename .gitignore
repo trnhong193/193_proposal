@@ -1,0 +1,6 @@
+*.pptx
+
+*.xlsx
+*.png
+*.pdf
+test/ref/
