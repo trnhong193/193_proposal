@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #000000; }
+body {
+  width: 720pt;
+  height: 405pt;
+  margin: 0;
+  padding: 0;
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  min-height: 0;
+}
+.title {
+  color: #00AEEF;
+  font-size: 24pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20pt 40pt 10pt 40pt;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex-shrink: 0;
+}
+.columns {
+  flex: 1;
+  display: flex;
+  margin: 0 40pt 54pt 40pt;
+  gap: 25pt;
+  min-height: 0;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+.column-title {
+  color: #00AEEF;
+  font-size: 16pt;
+  font-weight: bold;
+  margin-bottom: 10pt;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex-shrink: 0;
+}
+.column-content {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<h1 class="title">Scope of Work</h1>
+<div class="columns">
+  <div class="column">
+    <h2 class="column-title">viAct Responsibilities</h2>
+    <div class="column-content">
+      <ul><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">Software: AI video analytics license, maintenance, and support</li><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">Camera integration: Integration with existing Verkada cameras via RTSP</li><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">Cloud infrastructure: Cloud-based deployment and management</li><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">System configuration: AI module configuration and calibration</li><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">Training: User training and documentation</li></ul>
+    </div>
+  </div>
+  <div class="column">
+    <h2 class="column-title">Client Responsibilities</h2>
+    <div class="column-content">
+      <ul><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">Hardware: Existing camera infrastructure (Verkada CD41 and CD41-E cameras)</li><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">Network: Stable internet connection with minimum 12 Mbps per camera, port 554 access</li><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">Power: Stable power source for cameras and network equipment</li><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">Speaker integration: Integration of existing on-site speakers (3 speakers per workshop) with the AI system</li><li style="margin-bottom: 4pt; font-size: 10pt; color: #FFFFFF; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">Site access: Provide access for site survey and system deployment</li></ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

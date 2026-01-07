@@ -1,0 +1,458 @@
+{
+  "project_name": "Video Analytics Solution Proposal for AVA Project - Nas Ltd",
+  "client_name": "AVA Project - Nas Ltd",
+  "total_slides": 17,
+  "slides": [
+    {
+      "slide_number": 1,
+      "type": "title",
+      "title": "Video Analytics Solution Proposal for AVA Project - Nas Ltd",
+      "subtitle": "",
+      "date": "2026-01-06"
+    },
+    {
+      "slide_number": 2,
+      "type": "content_bullets",
+      "title": "Project Requirement Statement",
+      "content": [
+        {
+          "level": 0,
+          "text": "Project: AI-Powered Video Analytics for Safety Compliance and Workforce Monitoring"
+        },
+        {
+          "level": 0,
+          "text": "Project Owner: AVA Project - Nas Ltd"
+        },
+        {
+          "level": 0,
+          "text": "Work Scope: Cloud-based AI system to monitor workplace safety compliance, detect fire and smoke incidents, prevent worker-vehicle collisions, and monitor restricted danger zones in real time."
+        },
+        {
+          "level": 0,
+          "text": "Project Duration: 6 months"
+        },
+        {
+          "level": 0,
+          "text": "Camera Number: 6 cameras"
+        },
+        {
+          "level": 0,
+          "text": "Number of AI Module per Camera: 3-4 modules per camera"
+        },
+        {
+          "level": 0,
+          "text": "AI Modules:"
+        },
+        {
+          "level": 1,
+          "text": "Helmet Detection"
+        },
+        {
+          "level": 1,
+          "text": "Hi-vis vest detection"
+        },
+        {
+          "level": 1,
+          "text": "Fire & Smoke Detection"
+        },
+        {
+          "level": 1,
+          "text": "Anti-Collision"
+        },
+        {
+          "level": 1,
+          "text": "Restricted Zone detection"
+        }
+      ]
+    },
+    {
+      "slide_number": 3,
+      "type": "two_column",
+      "title": "Scope of Work",
+      "left_column": {
+        "title": "viAct Responsibilities",
+        "content": [
+          "Software: License, maintenance, and support",
+          "Camera integration"
+        ]
+      },
+      "right_column": {
+        "title": "Client Responsibilities",
+        "content": [
+          "Hardware: Camera maintenance and operation (6 IP cameras already installed)"
+        ]
+      }
+    },
+    {
+      "slide_number": 4,
+      "type": "diagram",
+      "title": "Proposed System Architecture",
+      "diagram": {
+        "type": "mermaid",
+        "code": "graph TB\n    subgraph \"On-Site Infrastructure\"\n        Cameras[\"Up to 6 Cameras<br/>IP-based Camera\"]\n        \n        Internet[\"Internet Connection<br/>(Provided by Client)\"]\n    end\n    \n    subgraph \"Cloud Infrastructure\"\n        Cloud_Training[\"AI Training<br/>(Cloud)\"]\n        Cloud_Inference[\"On-cloud in AWS<br/>(viAct's CMP)<br/>Helmet Detection<br/>Hi-vis vest detection<br/>Fire & Smoke Detection<br/>Anti-Collision<br/>Restricted Zone detection\"]\n    end\n    \n    subgraph \"Output Services\"\n        Dashboard[\"Centralized Dashboard\"]\n        Alert[\"Alert/Notification<br/>(Email & Telegram & Dashboard)\"]\n        HSE_Manager[\"HSE Manager\"]\n    end\n    \n    Cameras -->|RTSP Links| Internet\n    Internet -->|RTSP Links| Cloud_Inference\n    Cloud_Training -->|Trained Models| Cloud_Inference\n    Cloud_Inference -->|Detection Results| Dashboard\n    Cloud_Inference -->|Alerts| Alert\n    Dashboard -->|Information & Alerts| HSE_Manager\n    Alert -->|Notifications| HSE_Manager\n    style Cloud_Training fill:#e1f5ff,stroke:#01579b,stroke-width:2px,color:#000000\n    style Cloud_Inference fill:#81d4fa,stroke:#0277bd,stroke-width:3px,color:#000000\n    style Dashboard fill:#fff4e1,stroke:#e65100,stroke-width:2px,color:#000000\n    style Alert fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000000\n    style HSE_Manager fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000000\n    style Internet fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#000000\n    style Cameras fill:#ffffff,stroke:#424242,stroke-width:2px,color:#000000\n    classDef aiModuleStyle fill:#f5f5f5,stroke:#616161,stroke-width:2px,color:#000000",
+        "description": ""
+      }
+    },
+    {
+      "slide_number": 5,
+      "type": "content_bullets",
+      "title": "System Requirements: Network",
+      "content": [
+        {
+          "level": 0,
+          "text": "Per-camera bandwidth: 12 Mbps"
+        },
+        {
+          "level": 0,
+          "text": "Total system bandwidth: 72 Mbps (12 Mbps × 6 cameras)"
+        }
+      ]
+    },
+    {
+      "slide_number": 6,
+      "type": "content_bullets",
+      "title": "System Requirements: Camera",
+      "content": [
+        {
+          "level": 0,
+          "text": "Resolution: 1080p@25fps (minimum)"
+        },
+        {
+          "level": 0,
+          "text": "Frame rate: 25fps"
+        },
+        {
+          "level": 0,
+          "text": "Connectivity Type: IP-based cameras with RTSP support"
+        },
+        {
+          "level": 0,
+          "text": "Quantity: 6 IP cameras (already installed)"
+        }
+      ]
+    },
+    {
+      "slide_number": 7,
+      "type": "content_bullets",
+      "title": "System Requirements: Additional Equipment",
+      "content": [
+        {
+          "level": 0,
+          "text": "None required (no IoT integration specified)"
+        }
+      ]
+    },
+    {
+      "slide_number": 8,
+      "type": "content_bullets",
+      "title": "System Requirements: Power Requirements",
+      "content": [
+        {
+          "level": 0,
+          "text": "Power Source: Stable power source (confirmed by client)"
+        },
+        {
+          "level": 0,
+          "text": "---"
+        }
+      ]
+    },
+    {
+      "slide_number": 9,
+      "type": "timeline",
+      "title": "Implementation Plan",
+      "timeline": {
+        "format": "milestones",
+        "milestones": [
+          {
+            "phase": "T0",
+            "event": "| Project Award / Contract Signed | — |",
+            "date": "",
+            "notes": []
+          },
+          {
+            "phase": "T1",
+            "event": "| Hardware Deployment | T0 + 1-2 weeks |",
+            "date": "1-2 weeks |",
+            "notes": []
+          },
+          {
+            "phase": "T2",
+            "event": "| Software Deployment | T1 + 4-6 weeks |",
+            "date": "4-6 weeks |",
+            "notes": []
+          },
+          {
+            "phase": "T3",
+            "event": "| System Integration & Handover / UAT | T2 + 2-4 weeks |",
+            "date": "2-4 weeks |",
+            "notes": []
+          }
+        ]
+      }
+    },
+    {
+      "slide_number": 10,
+      "type": "module_description",
+      "title": "Helmet Detection",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Ensures compliance with safety regulations by identifying workers wearing safety helmets. Detects workers without a safety helmet on the construction site.",
+        "alert_logic": "AI will capture people not wearing a helmet or wearing the helmet, and trigger the real-time alerts.",
+        "preconditions": "Camera must maintain a suitable distance for clear observation of workers, typically between 5 to 10 meters.",
+        "data_requirements": "None (standard module)",
+        "image_url": "https://drive.google.com/file/d/1ZUTCB6q_70nMhXGzR9MjCm7fNHSq4KaP/view?usp=sharing",
+        "video_url": "https://drive.google.com/file/d/1adkUPBJaBPbUVdirflpQwFOVai84p4k2/view?usp=sharing"
+      }
+    },
+    {
+      "slide_number": 11,
+      "type": "module_description",
+      "title": "Hi-vis vest detection",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Detects workers wearing high-visibility vests. These vests enhance visibility, especially in low-light conditions.",
+        "alert_logic": "Alert will be sent out immediately to remind workers missing a reflective vest. AI identifies missing vests and notifies in real time.",
+        "preconditions": "Camera must maintain a suitable distance for clear observation of workers, typically between 5 to 10 meters.",
+        "data_requirements": "None (standard module)",
+        "image_url": "https://drive.google.com/file/d/1ZUTCB6q_70nMhXGzR9MjCm7fNHSq4KaP/view?usp=sharing",
+        "video_url": "https://drive.google.com/file/d/1adkUPBJaBPbUVdirflpQwFOVai84p4k2/view?usp=sharing"
+      }
+    },
+    {
+      "slide_number": 12,
+      "type": "module_description",
+      "title": "Fire & Smoke Detection",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Detects situations where fire or smoke is present in the monitored area, ensuring early intervention and safety compliance.",
+        "alert_logic": "Automatically triggers an alert when fire or smoke is detected in the area, enabling quick response and mitigation actions.",
+        "preconditions": "Camera must directly face the work area, allowing a clear view of the work area – the area prone to fire hazards.",
+        "data_requirements": "None (standard module)",
+        "image_url": "",
+        "video_url": "https://drive.google.com/file/d/1hR2FZrlMhmPXq2qvbWm0D7uKZ6KDhtkc/view?usp=sharing"
+      }
+    },
+    {
+      "slide_number": 13,
+      "type": "module_description",
+      "title": "Anti-Collision",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Detects and identifies potential or actual workers dangerously close to moving machinery within 100 cm (3 feet) and between workers.",
+        "alert_logic": "Automatically triggers an alert when a near-miss from 100cm or a collision occurs.",
+        "preconditions": "Requires providing images of different vehicle types for model training.",
+        "data_requirements": "Request: Provide images of different vehicle types for model training.",
+        "image_url": "",
+        "video_url": "https://drive.google.com/file/d/1h50cgHZ0qhxEdUoFLtnSUbxvAgGzX_YR/view?usp=sharing"
+      }
+    },
+    {
+      "slide_number": 14,
+      "type": "module_description",
+      "title": "Restricted Zone detection",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Alerts whenever workers enter/approach the switchgear panel (crossing the restricted red line).",
+        "alert_logic": "Alarms trigger if someone enters without authorization.",
+        "preconditions": "Cameras cover perimeter areas, continuously monitoring for intruders.",
+        "data_requirements": "None (standard module)",
+        "image_url": "https://drive.google.com/file/d/1ZUTCB6q_70nMhXGzR9MjCm7fNHSq4KaP/view?usp=sharing",
+        "video_url": "https://drive.google.com/file/d/1mCcEq2Wps4siMLDFm0_cQ4SiPTQKA6U_/view?usp=sharing"
+      }
+    },
+    {
+      "slide_number": 15,
+      "type": "content_bullets",
+      "title": "8.1 Alerts & Notifications",
+      "content": [
+        {
+          "level": 0,
+          "text": "Channels:"
+        },
+        {
+          "level": 0,
+          "text": "Dashboard: Real-time alerts displayed on web-based dashboard"
+        },
+        {
+          "level": 0,
+          "text": "Email: Automated email notifications to designated operators"
+        },
+        {
+          "level": 0,
+          "text": "Telegram: Telegram bot notifications for on-site alerts"
+        },
+        {
+          "level": 0,
+          "text": "Alert Configuration:"
+        },
+        {
+          "level": 0,
+          "text": "Real-time alert triggers for all detection events"
+        },
+        {
+          "level": 0,
+          "text": "Configurable alert thresholds and sensitivity"
+        },
+        {
+          "level": 0,
+          "text": "Alert escalation rules based on severity"
+        }
+      ]
+    },
+    {
+      "slide_number": 16,
+      "type": "content_bullets",
+      "title": "8.2 Dashboard Visualizations",
+      "content": [
+        {
+          "level": 0,
+          "text": "Event Analysis:"
+        },
+        {
+          "level": 0,
+          "text": "Charts and graphs of detection frequencies"
+        },
+        {
+          "level": 0,
+          "text": "Module-wise performance metrics"
+        },
+        {
+          "level": 0,
+          "text": "Time-based trend analysis"
+        },
+        {
+          "level": 0,
+          "text": "Alert Timelines:"
+        },
+        {
+          "level": 0,
+          "text": "Chronological view of all incidents"
+        },
+        {
+          "level": 0,
+          "text": "Filterable by module, time range, and severity"
+        },
+        {
+          "level": 0,
+          "text": "Detailed event logs with timestamps"
+        },
+        {
+          "level": 0,
+          "text": "Evidence Snapshots:"
+        },
+        {
+          "level": 0,
+          "text": "Image snapshots of detected events"
+        },
+        {
+          "level": 0,
+          "text": "Video clips capturing incidents"
+        },
+        {
+          "level": 0,
+          "text": "Downloadable evidence for reporting"
+        },
+        {
+          "level": 0,
+          "text": "Custom KPIs:"
+        },
+        {
+          "level": 0,
+          "text": "PPE compliance rate"
+        },
+        {
+          "level": 0,
+          "text": "Fire/smoke incident count"
+        },
+        {
+          "level": 0,
+          "text": "Near-miss/collision events"
+        },
+        {
+          "level": 0,
+          "text": "Restricted zone violations"
+        },
+        {
+          "level": 0,
+          "text": "Overall safety score"
+        },
+        {
+          "level": 0,
+          "text": "Multi-Dashboard:"
+        },
+        {
+          "level": 0,
+          "text": "Single centralized dashboard for all 6 cameras"
+        },
+        {
+          "level": 0,
+          "text": "Real-time monitoring view"
+        },
+        {
+          "level": 0,
+          "text": "Historical data analysis view"
+        }
+      ]
+    },
+    {
+      "slide_number": 17,
+      "type": "content_bullets",
+      "title": "8.3 Daily / Weekly Summary Reports",
+      "content": [
+        {
+          "level": 0,
+          "text": "Automated Reporting Features:"
+        },
+        {
+          "level": 0,
+          "text": "Daily summary reports sent to stakeholders"
+        },
+        {
+          "level": 0,
+          "text": "Weekly aggregated reports with trends"
+        },
+        {
+          "level": 0,
+          "text": "Export capabilities: Excel, PDF, CSV formats"
+        },
+        {
+          "level": 0,
+          "text": "Timestamp filtering and date range selection"
+        },
+        {
+          "level": 0,
+          "text": "Module-wise breakdown of incidents"
+        },
+        {
+          "level": 0,
+          "text": "Report Content:"
+        },
+        {
+          "level": 0,
+          "text": "Total number of alerts per module"
+        },
+        {
+          "level": 0,
+          "text": "Compliance rates and trends"
+        },
+        {
+          "level": 0,
+          "text": "Top violation types"
+        },
+        {
+          "level": 0,
+          "text": "Time-based incident distribution"
+        },
+        {
+          "level": 0,
+          "text": "Evidence attachments"
+        },
+        {
+          "level": 0,
+          "text": "---"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "project_name": "Video Analytics Solution Proposal for Cedo Vietnam",
+  "client_name": "Cedo Vietnam",
+  "total_slides": 17,
+  "slides": [
+    {
+      "slide_number": 1,
+      "type": "title",
+      "title": "Video Analytics Solution Proposal for Cedo Vietnam",
+      "subtitle": "",
+      "date": "2026-06-01"
+    },
+    {
+      "slide_number": 2,
+      "type": "content_bullets",
+      "title": "Project Requirement Statement",
+      "content": [
+        {
+          "level": 0,
+          "text": "Project: AI-Powered Video Analytics for Safety Monitoring and Compliance"
+        },
+        {
+          "level": 0,
+          "text": "Project Owner: Cedo Vietnam"
+        },
+        {
+          "level": 0,
+          "text": "Work Scope: Cloud-based AI system to monitor workplace safety in real-time, transforming existing CCTV infrastructure into a proactive safety monitoring solution. The system will detect PPE compliance and unsafe behaviors to prevent safety incidents."
+        },
+        {
+          "level": 0,
+          "text": "Project Duration: Q1/2026 (Site survey scheduled for 1st week of January 2026)"
+        },
+        {
+          "level": 0,
+          "text": "Camera Number: 17 cameras - Workshop VN1: 9 cameras (Verkada CD41 and CD41-E) - Workshop VN2: 8 cameras (Verkada CD41 and CD41-E)"
+        },
+        {
+          "level": 0,
+          "text": "Number of AI Module per Camera: 2-3 modules per camera (average)"
+        },
+        {
+          "level": 0,
+          "text": "AI Modules: 1. Helmet Detection\n2. Hi-vis vest detection\n3. Safety shoes detection\n4. Safety Gloves Detection\n5. Anti Collision"
+        }
+      ]
+    },
+    {
+      "slide_number": 3,
+      "type": "two_column",
+      "title": "Scope of Work",
+      "left_column": {
+        "title": "viAct Responsibilities",
+        "content": [
+          "Software: AI video analytics license, maintenance, and support",
+          "Camera integration: Integration with existing Verkada cameras via RTSP",
+          "Cloud infrastructure: Cloud-based deployment and management",
+          "System configuration: AI module configuration and calibration",
+          "Training: User training and documentation"
+        ]
+      },
+      "right_column": {
+        "title": "Client Responsibilities",
+        "content": [
+          "Hardware: Existing camera infrastructure (Verkada CD41 and CD41-E cameras)",
+          "Network: Stable internet connection with minimum 12 Mbps per camera, port 554 access",
+          "Power: Stable power source for cameras and network equipment",
+          "Speaker integration: Integration of existing on-site speakers (3 speakers per workshop) with the AI system",
+          "Site access: Provide access for site survey and system deployment"
+        ]
+      }
+    },
+    {
+      "slide_number": 4,
+      "type": "diagram",
+      "title": "Proposed System Architecture",
+      "diagram": {
+        "type": "mermaid",
+        "code": "graph TB\n    subgraph \"On-Site Infrastructure\"\n        Cameras[\"Up to 17 Cameras<br/>IP-based Camera\"]\n        \n        Internet[\"Internet Connection<br/>(Provided by Client)\"]\n    end\n    \n    subgraph \"Cloud Infrastructure\"\n        Cloud_Training[\"AI Training<br/>(Cloud)\"]\n        Cloud_Inference[\"On-cloud in AWS<br/>(viAct's CMP)<br/>Helmet Detection<br/>Hi-vis vest detection<br/>Safety shoes detection<br/>Safety Gloves Detection<br/>Anti Collision\"]\n    end\n    \n    subgraph \"Output Services\"\n        Dashboard[\"Centralized Dashboard\"]\n        Alert[\"Alert/Notification<br/>(Email & Dashboard)\"]\n        HSE_Manager[\"HSE Manager\"]\n    end\n    \n    Cameras -->|RTSP Links| Internet\n    Internet -->|RTSP Links| Cloud_Inference\n    Cloud_Training -->|Trained Models| Cloud_Inference\n    Cloud_Inference -->|Detection Results| Dashboard\n    Cloud_Inference -->|Alerts| Alert\n    Dashboard -->|Information & Alerts| HSE_Manager\n    Alert -->|Notifications| HSE_Manager\n    style Cloud_Training fill:#e1f5ff,stroke:#01579b,stroke-width:2px,color:#000000\n    style Cloud_Inference fill:#81d4fa,stroke:#0277bd,stroke-width:3px,color:#000000\n    style Dashboard fill:#fff4e1,stroke:#e65100,stroke-width:2px,color:#000000\n    style Alert fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000000\n    style HSE_Manager fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000000\n    style Internet fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#000000\n    style Cameras fill:#ffffff,stroke:#424242,stroke-width:2px,color:#000000\n    classDef aiModuleStyle fill:#f5f5f5,stroke:#616161,stroke-width:2px,color:#000000",
+        "description": ""
+      }
+    },
+    {
+      "slide_number": 5,
+      "type": "content_bullets",
+      "title": "System Requirements: Network",
+      "content": [
+        {
+          "level": 0,
+          "text": "Per-camera bandwidth: 12 Mbps"
+        },
+        {
+          "level": 0,
+          "text": "Total system bandwidth: 204 Mbps (12 Mbps × 17 cameras)"
+        },
+        {
+          "level": 0,
+          "text": "Port requirement: Port 554 for RTSP access"
+        },
+        {
+          "level": 0,
+          "text": "Network stability: Stable internet connection required"
+        }
+      ]
+    },
+    {
+      "slide_number": 6,
+      "type": "content_bullets",
+      "title": "System Requirements: Camera",
+      "content": [
+        {
+          "level": 0,
+          "text": "Resolution: 1080p"
+        },
+        {
+          "level": 0,
+          "text": "Frame rate: 25fps (standard)"
+        },
+        {
+          "level": 0,
+          "text": "Connectivity Type: IP-based cameras with RTSP support"
+        },
+        {
+          "level": 0,
+          "text": "Camera models: Verkada CD41 and CD41-E"
+        },
+        {
+          "level": 0,
+          "text": "Camera count: 17 cameras (9 at VN1, 8 at VN2)"
+        }
+      ]
+    },
+    {
+      "slide_number": 7,
+      "type": "content_bullets",
+      "title": "System Requirements: Additional Equipment",
+      "content": [
+        {
+          "level": 0,
+          "text": "Speaker integration: 3 speakers per workshop (6 speakers total) - integration feasibility to be confirmed during site survey"
+        }
+      ]
+    },
+    {
+      "slide_number": 8,
+      "type": "content_bullets",
+      "title": "System Requirements: Power Requirements",
+      "content": [
+        {
+          "level": 0,
+          "text": "Power Source: Stable power source (confirmed available)"
+        },
+        {
+          "level": 0,
+          "text": "---"
+        }
+      ]
+    },
+    {
+      "slide_number": 9,
+      "type": "timeline",
+      "title": "Implementation Plan",
+      "timeline": {
+        "format": "milestones",
+        "milestones": [
+          {
+            "phase": "T0",
+            "event": "Project Award / Contract Signed",
+            "date": "—",
+            "notes": []
+          },
+          {
+            "phase": "T1",
+            "event": "Hardware Deployment",
+            "date": "T0 + 1-2 weeks",
+            "notes": [
+              
+            ]
+          },
+          {
+            "phase": "T2",
+            "event": "Software Deployment",
+            "date": "T1 + 4-6 weeks",
+            "notes": [
+             
+            ]
+          },
+          {
+            "phase": "T3",
+            "event": "System Integration & Handover / UAT",
+            "date": "T2 + 2-4 weeks",
+            "notes": [
+              
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slide_number": 10,
+      "type": "module_description",
+      "title": "Helmet Detection",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Ensures compliance with safety regulations by identifying workers wearing safety helmets. Detects workers without a safety helmet in the manufacturing facility.",
+        "alert_logic": "AI will capture people not wearing a helmet or wearing the helmet incorrectly, and trigger real-time alerts.",
+        "preconditions": "Camera must maintain a suitable distance for clear observation of workers, typically between 5 to 10 meters.",
+        "data_requirements": "Not applicable (standard module)",
+        "image_url": "https://drive.google.com/file/d/1ZUTCB6q_70nMhXGzR9MjCm7fNHSq4KaP/view?usp=sharing",
+        "video_url": "https://drive.google.com/file/d/1adkUPBJaBPbUVdirflpQwFOVai84p4k2/view?usp=sharing"
+      }
+    },
+    {
+      "slide_number": 11,
+      "type": "module_description",
+      "title": "Hi-vis vest detection",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Detects workers wearing high-visibility vests. These vests enhance visibility, especially in low-light conditions, ensuring worker safety in manufacturing areas.",
+        "alert_logic": "Alert will be sent out immediately to remind workers missing a reflective vest. AI identifies missing vests and notifies in real time.",
+        "preconditions": "Camera must maintain a suitable distance for clear observation of workers, typically between 5 to 10 meters.",
+        "data_requirements": "Not applicable (standard module)",
+        "image_url": "",
+        "video_url": "https://drive.google.com/file/d/1adkUPBJaBPbUVdirflpQwFOVai84p4k2/view?usp=sharing"
+      }
+    },
+    {
+      "slide_number": 12,
+      "type": "module_description",
+      "title": "Safety Gloves Detection",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Detects the presence of different safety gloves required at various working zones to ensure workers meet safety gear regulation, especially for cutting and welding activities.",
+        "alert_logic": "AI will capture people not wearing safety gloves and trigger real-time alerts.",
+        "preconditions": "Camera must maintain a suitable distance for clear observation of workers, typically between 5 to 10 meters.",
+        "data_requirements": "Not applicable (standard module)",
+        "image_url": "",
+        "video_url": "https://drive.google.com/file/d/1adkUPBJaBPbUVdirflpQwFOVai84p4k2/view?usp=sharing"
+      }
+    },
+    {
+      "slide_number": 13,
+      "type": "module_description",
+      "title": "Safety shoes detection",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Detects workers without safety shoes before entering the site and/or during working at the site. Verifies proper footwear usage. Safety shoes protect against hazards like falling objects or sharp materials.",
+        "alert_logic": "Alert will be sent out immediately to site supervisors when workers without safety shoes are detected.",
+        "preconditions": "Camera must maintain a suitable distance for clear observation of workers, typically between 5 to 10 meters.",
+        "data_requirements": "Not applicable (standard module)",
+        "image_url": "",
+        "video_url": ""
+      }
+    },
+    {
+      "slide_number": 14,
+      "type": "module_description",
+      "title": "Anti Collision",
+      "module_type": "Standard",
+      "content": {
+        "purpose": "Detects and identifies potential or actual workers dangerously close to moving machinery within 100 cm (3 feet). Prevents unsafe human-machine proximity incidents, including human intervention such as putting hands or climbing on machines during operation.",
+        "alert_logic": "Automatically triggers an alert when a worker is detected within 100cm of moving machinery or when unsafe human-machine interaction is detected.",
+        "preconditions": "Requires providing images of different machine types for model training. Camera must maintain clear view of machinery and surrounding work areas.",
+        "data_requirements": "Request: Provide images of different machine types for model training",
+        "image_url": "",
+        "video_url": "https://drive.google.com/file/d/1h50cgHZ0qhxEdUoFLtnSUbxvAgGzX_YR/view?usp=sharing"
+      }
+    },
+    {
+      "slide_number": 15,
+      "type": "content_bullets",
+      "title": "Alerts & Notifications",
+      "content": [
+        {
+          "level": 0,
+          "text": "Channels:"
+        },
+        {
+          "level": 0,
+          "text": "Local speaker alerts: On-site speakers (3 speakers per workshop) for real-time audio alerts"
+        },
+        {
+          "level": 0,
+          "text": "Dashboard pop-ups: Real-time alerts displayed on web dashboard"
+        },
+        {
+          "level": 0,
+          "text": "Email notifications: Automated email alerts to supervisors and HSE team"
+        },
+        {
+          "level": 0,
+          "text": "Alert Integration: Integration with existing on-site speakers (3 speakers per workshop) - integration feasibility to be confirmed during site survey"
+        }
+      ]
+    },
+    {
+      "slide_number": 16,
+      "type": "content_bullets",
+      "title": "Dashboard Visualizations",
+      "content": [
+        {
+          "level": 0,
+          "text": "Event Analysis: Charts and graphs showing detection frequencies for each module, safety compliance rates, and incident trends."
+        },
+        {
+          "level": 0,
+          "text": "Alert Timelines: Chronological view of all safety incidents and alerts, with filtering by module type, location, and time period."
+        },
+        {
+          "level": 0,
+          "text": "Evidence Snapshots: Image and video clips of detected events, including timestamp and location information."
+        },
+        {
+          "level": 0,
+          "text": "Custom KPIs: Standard KPIs include:"
+        },
+        {
+          "level": 0,
+          "text": "PPE compliance rate (helmet, vest, shoes, gloves)"
+        },
+        {
+          "level": 0,
+          "text": "Unsafe behavior incidents (human-machine proximity violations)"
+        },
+        {
+          "level": 0,
+          "text": "Alert frequency by module and location"
+        },
+        {
+          "level": 0,
+          "text": "Safety trend analysis"
+        },
+        {
+          "level": 0,
+          "text": "Multi-Dashboard: Web-based dashboard accessible from multiple locations, with role-based access control."
+        }
+      ]
+    },
+    {
+      "slide_number": 17,
+      "type": "content_bullets",
+      "title": "Daily / Weekly Summary Reports",
+      "content": [
+        {
+          "level": 0,
+          "text": "Automated Reporting Features:"
+        },
+        {
+          "level": 0,
+          "text": "Daily summary reports sent to stakeholders (HSE Manager, Plant Director)"
+        },
+        {
+          "level": 0,
+          "text": "Weekly compliance reports with trend analysis"
+        },
+        {
+          "level": 0,
+          "text": "Export functionality: Excel / PDF / CSV formats"
+        },
+        {
+          "level": 0,
+          "text": "Filtering options: Timestamp, location (VN1/VN2), event type, module type"
+        },
+        {
+          "level": 0,
+          "text": "Report Content:"
+        },
+        {
+          "level": 0,
+          "text": "Total alerts by module type"
+        },
+        {
+          "level": 0,
+          "text": "Compliance rates by location"
+        },
+        {
+          "level": 0,
+          "text": "Incident trends and patterns"
+        },
+        {
+          "level": 0,
+          "text": "Evidence snapshots and video clips"
+        },
+        {
+          "level": 0,
+          "text": "---"
+        }
+      ]
+    }
+  ]
+}

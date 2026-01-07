@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #000000; }
+body {
+  width: 720pt;
+  height: 405pt;
+  margin: 0;
+  padding: 0;
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  min-height: 0;
+}
+.title {
+  color: #00AEEF;
+  font-size: 26pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20pt 40pt 12pt 40pt;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex-shrink: 0;
+}
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  margin: 0 40pt 72pt 40pt;
+  gap: 25pt;
+  min-height: 0;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.image-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.section {
+  margin-bottom: 8pt;
+}
+.section-label {
+  color: #00AEEF;
+  font-size: 13pt;
+  font-weight: bold;
+  margin-bottom: 2pt;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.section-text {
+  color: #FFFFFF;
+  font-size: 11pt;
+  line-height: 1.25;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<h1 class="title">Hi-vis vest detection</h1>
+<div class="content-wrapper">
+  <div class="text-content">
+    <div class="section">
+      <p class="section-label">Purpose:</p>
+      <p class="section-text">Detects workers wearing high-visibility vests. These vests enhance visibility, especially in low-light conditions.</p>
+    </div>
+    <div class="section">
+      <p class="section-label">Alert Logic:</p>
+      <p class="section-text">Alert will be sent out immediately to remind workers missing a reflective vest. AI identifies missing vests and notifies in real time.</p>
+    </div>
+    <div class="section">
+      <p class="section-label">Preconditions:</p>
+      <p class="section-text">Camera must maintain a suitable distance for clear observation of workers, typically between 5 to 10 meters.</p>
+    </div>
+    <div class="section">
+      <p class="section-label">Data Requirements:</p>
+      <p class="section-text">None (standard module)</p>
+    </div>
+  </div>
+  <div class="image-content">
+    <img src="../assets/module_7.png" alt="Hi-vis vest detection" />
+  </div>
+</div>
+</body>
+</html>
